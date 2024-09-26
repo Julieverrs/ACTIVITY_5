@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View All Songs</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>All Songs</h1>
+
+        <div class="song-list">
+            <% songs.forEach(function(song) { %>
+                <div class="song-item">
+                    <img src="/uploads/<%= song.album_photo %>" alt="Album Photo" class="album-photo">
+                    <h3><a href="/songs/<%= song.id %>" class="song-link"><%= song.title %></a></h3>
+                </div>
+            <% }); %>
+        </div>
+
+        <!-- Back to Home button -->
+        <div class="button-group">
+            <a href="/" class="button back-button">Back to Home</a>
+        </div>
+    </div>
+</body>
+</html>
